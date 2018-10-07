@@ -14,9 +14,9 @@ steps:
   displayName: Execute SQL
   inputs:
     azureSubscription : 'AzureConnection'
-    ServerName: 'testazuresql.database.windows.net'
+    ServerName: 'testsqlazuredatabase.database.windows.net'
     DatabaseName: 'testsql_d'
-    SqlUsername: 'sa'
+    SqlUsername: 'mwalia'
     SqlPassword: 'Password@1'
-    DacpacFile: '/Restaurant.dacpac'
+    DacpacFile: '$(system.defaultworkingdirectory)/TestAzureSQLDatabase.dacpac'
     
