@@ -10,15 +10,16 @@ $ErrorActionPreference = 'Stop'
 
 
 function New-AzureSQLServerFirewallRule{
-    $wc = New-Object System.Net.Webclient
-    $agentIP = $wc.downloadstring("http://checkip.dyndns.com") -replace "[^\d\.]"
-    New-AzureRmSqlServerFirewallRule -ResourceGroupName sqldatabase -StartIPAddress $agentIP -EndIPAddress $agentIP -FirewallRuleName $AzureFirewallName -ServerName $ServerName 
+  $response = Invoke-WebRequest ifconfig.me/ip
+    $ip = $response.Content.Trim()
+	New-AzureRmSqlServerFirewallRule  -ResourceGroupName sqldatabase -StartIPAddress $ip -EndIPAddress $ip -FirewallRuleName $AzureFirewallName -ServerName $ServerName
 }
 
+
 function Update-AzureSQLServerFirewallRule{
-    $wc = New-Object System.Net.Webclient
-    $agentIP = wc.downloadstring("http://checkip.dyndns.com") -replace "[^\d\.]"
-    Set-AzureRmSqlServerFirewallRule -ResourceGroupName sqldatabase -StartIPAddress $agentIP -EndIPAddress $agentIP -FirewallRuleName $AzureFirewallName -ServerName $ServerName 
+ $response = Invoke-WebRequest ifconfig.me/ip
+    $ip = $response.Content.Trim()
+	Set-AzureRmSqlServerFirewallRule  -ResourceGroupName sqldatabase -StartIPAddress $ip -EndIPAddress $ip -FirewallRuleName $AzureFirewallName -ServerName $ServerName
 }
 
 function Login
