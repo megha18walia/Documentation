@@ -1,0 +1,265 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "servers_testsqlazuredatabase_name": {
+            "defaultValue": "testsqlazuredatabase",
+            "type": "String"
+        },
+        "advisors_DropIndex_name": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "keys_ServiceManaged_name": {
+            "defaultValue": "ServiceManaged",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "encryptionProtector_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "defaultValue": "AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "databases_master_name": {
+            "defaultValue": "master",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_testsqlazuredatabase_name')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "eastus",
+            "scale": null,
+          "properties": {
+            "administratorLogin": "mwalia",
+            "administratorLoginPassword": "Password@1",
+            "version": "12.0"
+          },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('advisors_CreateIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('advisors_DropIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('advisors_DbParameterization_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('advisors_DefragmentIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('advisors_ForceLastGoodPlan_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('auditingPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "fullAuditLogsTableName": "SQLDBAuditLogsTestsqlazuredatabase",
+                "auditLogsTableName": "Testsqlazuredatabase",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('firewallRules_AllowAllWindowsAzureIps_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/encryptionProtector/current'.",
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('encryptionProtector_current_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/keys/ServiceManaged'.",
+            "type": "Microsoft.Sql/servers/keys",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('keys_ServiceManaged_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyType": "[parameters('keys_ServiceManaged_name')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/databases/master/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('databases_master_name'), '/', parameters('auditingPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsTestsqlazuredatabaseMaster",
+                "auditLogsTableName": "TestsqlazuredatabaseMaster",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/databases/master/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('databases_master_name'), '/', parameters('geoBackupPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+            ]
+        },
+      {
+        "comments": "Generalized from resource: '/subscriptions/398203e5-596e-4058-95c9-f5ee030e54d4/resourceGroups/sqldatabase/providers/Microsoft.Sql/servers/testsqlazuredatabase/databases/master/transparentDataEncryption/current'.",
+        "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+        "name": "[concat(parameters('servers_testsqlazuredatabase_name'), '/', parameters('databases_master_name'), '/', parameters('transparentDataEncryption_current_name'))]",
+        "apiVersion": "2014-04-01",
+        "location": "East US",
+        "scale": null,
+        "properties": {
+          "status": "Disabled"
+        },
+        "dependsOn": [
+          "[resourceId('Microsoft.Sql/servers', parameters('servers_testsqlazuredatabase_name'))]"
+        ]
+      }
+    ]
+}
