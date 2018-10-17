@@ -90,7 +90,7 @@ function Login
 
 }
 
-Login
+ Login-AzureRmAccount
 
 #******************************************************************************
 # Script body
